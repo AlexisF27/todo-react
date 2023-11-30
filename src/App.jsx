@@ -1,11 +1,12 @@
 import './App.css'
+import NotePad from './components/notePad/NotePad'
 
 function App() {
 
 
   return (
     <>
-        Hello my bro 
+      <NotePad />
     </>
   )
 }
