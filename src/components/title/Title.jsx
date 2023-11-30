@@ -1,15 +1,19 @@
 import PropTypes from 'prop-types'
+import Typography from '@mui/material/Typography';
+import { red } from '@mui/material/colors';
 
-function Title ({title='Hello there!'}) {
+import "./title.css"
+
+function Title ({title}) {
   return (
     <>
-      <h1>{title}</h1>
+      <Typography className="title" color={{ color: red[500] }} variant='h1'>{title}</Typography>
     </>
   )
 }
 
 Title.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string.isRequired
 }
 
 

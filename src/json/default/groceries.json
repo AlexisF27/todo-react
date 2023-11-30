@@ -1,8 +1,8 @@
 [
   {
-    "checked": false,
+    "checked": true,
     "quantity": 1,
-    "article": "bananas"
+    "article": "Bananas"
   },
   {
     "checked": false,
@@ -229,5 +229,4 @@
     "quantity": 1,
     "article": "Pimientos"
   }
-    
 ]

@@ -8,7 +8,7 @@ function TableHeader() {
         <TableRow>
           <TableCell align="right">Check</TableCell>
           <TableCell align="right"> Quantity </TableCell>
-          <TableCell align="center"> Article </TableCell>
+          <TableCell align="right"> Article </TableCell>
         </TableRow>
       </TableHead>
   )
