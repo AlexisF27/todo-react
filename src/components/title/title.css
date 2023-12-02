@@ -1,4 +1,9 @@
 .title{
+  display: flex;
   padding-bottom:  50px;
   padding-top:  50px;
+  font-family: 'monospace';
+  text-decoration: none;
+  color: green;
+  font-weight: 700;
 }
