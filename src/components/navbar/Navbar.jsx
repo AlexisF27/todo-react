@@ -6,9 +6,9 @@ import Toolbar from '@mui/material/Toolbar';
 
 import Container from '@mui/material/Container';
 
-import Logo from './NavBarComponents/Logo';
-import NavBarPages from './NavBarComponents/NavBarPages';
-import NavBarMenu from './NavBarComponents/NavBarMenu';
+import Logo from './components/Logo';
+import NavBarPages from './components/NavBarPages';
+import NavBarMenu from './components/NavBarMenu';
 
 
 

@@ -1,13 +1,14 @@
 import { Box,  Button } from '@mui/material';
+import PropTypes from 'prop-types'
 import '../notepad.css'
 
 import AddIcon from '@mui/icons-material/Add';
 
-function AddButton() {
+function AddButton({onClick}) {
   return (
     <>
       <Box className="add-button">
-        <Button color='primary' variant='contained' endIcon={<AddIcon />}>
+        <Button onClick={onClick} color='primary' variant='contained' endIcon={<AddIcon />}>
           Add
         </Button>
       </Box>
@@ -15,5 +16,10 @@ function AddButton() {
   )
 
 }
+
+AddButton.propTypes = {
+  onClick: PropTypes.func.isRequired
+}
+
 
 export default AddButton

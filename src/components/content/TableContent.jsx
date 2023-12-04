@@ -15,8 +15,6 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
 function TableContent({ rows }) {
-
-  console.log(rows)
   return (
     <TableBody>
       {rows.map((row) => (
