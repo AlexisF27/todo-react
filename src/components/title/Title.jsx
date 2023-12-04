@@ -6,7 +6,7 @@ function Title({ title }) {
 
   return (
     <>
-      <Typography className="title" variant='h1'
+      <Typography color='primary' variant='h1'
         sx={{
           mr: 2,
           display: { xs: 'flex', md: 'flex' },

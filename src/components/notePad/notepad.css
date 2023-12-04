@@ -1,0 +1,9 @@
+.paper-spacing {
+  padding: 50px 0 10px 0;
+}
+
+.add-button {
+  display: flex;
+  justify-content: end;
+  padding-top: 30px;
+}
