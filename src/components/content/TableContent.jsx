@@ -11,7 +11,11 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+
+
+
 function TableContent({ rows }) {
+
   console.log(rows)
   return (
     <TableBody>
@@ -21,7 +25,7 @@ function TableContent({ rows }) {
           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
         >
           <TableCell align="right">
-            <Checkbox {...label} checked={row.checked} icon={<ShoppingBasketIcon sx={{ color: red[500] }} />} checkedIcon={<ShoppingBasketIcon sx={{ color: green[700] }} />} />
+            <Checkbox  {...label} checked={row.checked} icon={<ShoppingBasketIcon sx={{ color: red[500] }} />} checkedIcon={<ShoppingBasketIcon sx={{ color: green[700] }} />} />
           </TableCell>
           <TableCell align="right">{row.quantity}</TableCell>
           <TableCell align="right" component="th" scope="row"> {row.article}</TableCell>

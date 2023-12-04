@@ -1,4 +1,4 @@
-.title{
+.title1{
   display: flex;
   padding-bottom:  50px;
   padding-top:  50px;
@@ -7,3 +7,20 @@
   color: green;
   font-weight: 700;
 }
+
+.title{
+  padding-top:  50px;
+  --s: 0.1em;   /* the thickness of the line */
+  --c: #ffac33; /* the color */
+  
+  color: #0000;
+  padding-bottom: var(--s);
+  background: 
+    linear-gradient(90deg,var(--c) 50%,#000 0) calc(100% - var(--_p,0%))/200% 100%,
+    linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+  -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+  transition: 0.5s;
+}
+
+.title:hover {--_p: 100%}

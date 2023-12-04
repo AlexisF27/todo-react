@@ -7,9 +7,10 @@ import TableContent from '../content/TableContent';
 import Title from '../title/Title';
 
 import GroceriesUtil from '../../utils/GroceriesUtil';
+import { Button } from '@mui/material';
 
 
-const rows = GroceriesUtil.getFullShoppingList();
+const rows = GroceriesUtil.getCasualShoppingList();
 
 const title = "Shopping List"
 
@@ -18,7 +19,6 @@ function NotePad() {
   return (
     <>
       <Title title={title} />
-
       <Paper elevation={3} square={true}>
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">

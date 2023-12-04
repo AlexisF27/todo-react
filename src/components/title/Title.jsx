@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types'
 import Typography from '@mui/material/Typography';
-
-
 import "./title.css"
 
-function Title ({title}) {
+function Title({ title }) {
+
   return (
     <>
       <Typography className="title" variant='h1'
@@ -14,7 +13,7 @@ function Title ({title}) {
           letterSpacing: '.3rem',
         }}
       >
-        {title} 
+        {title}
       </Typography>
     </>
   )
