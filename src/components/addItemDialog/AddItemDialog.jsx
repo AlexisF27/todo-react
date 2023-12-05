@@ -18,6 +18,16 @@ function AddItemDialog({ open, handleClose, handleSave }) {
     quantity: 1
   })
 
+  const handleInput = (event) => {
+    const { name, value } = event.target;
+    setItem((prevItem) => {
+      return {
+        ...prevItem,
+        [name]: value
+      }
+    })
+  }
+
   return (
     <>
       <Dialog
@@ -42,7 +52,7 @@ function AddItemDialog({ open, handleClose, handleSave }) {
           <FormGroup>
 
             <FormControl margin='normal' required >
-              <TextField id="article-name" label="Article" variant="outlined" value={item.article} />
+              <TextField id="article-name" label="Article" variant="outlined" name='article' value={item.article} onChange={handleInput} />
             </FormControl>
 
             <FormControl margin='normal' required>
@@ -50,6 +60,8 @@ function AddItemDialog({ open, handleClose, handleSave }) {
                 id="standard-number"
                 label="Number"
                 type="number"
+                onChange={handleInput}
+                name='quantity'
                 InputLabelProps={{
                   shrink: true,
                 }}
