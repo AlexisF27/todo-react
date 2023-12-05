@@ -4,13 +4,14 @@ import TableHead from '@mui/material/TableHead';
 function TableHeader() {
 
   return (
-      <TableHead>
-        <TableRow>
-          <TableCell align="right">Check</TableCell>
-          <TableCell align="right"> Quantity </TableCell>
-          <TableCell align="right"> Article </TableCell>
-        </TableRow>
-      </TableHead>
+    <TableHead>
+      <TableRow>
+        <TableCell align="right">Check</TableCell>
+        <TableCell align="right"> Quantity </TableCell>
+        <TableCell align="right"> Article </TableCell>
+        <TableCell align="right"> Actions </TableCell>
+      </TableRow>
+    </TableHead>
   )
 
 }

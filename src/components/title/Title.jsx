@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import Typography from '@mui/material/Typography';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import "./title.css"
 
 function Title({ title }) {
@@ -13,6 +14,7 @@ function Title({ title }) {
           letterSpacing: '.3rem',
         }}
       >
+        <ShoppingCartIcon sx={{ fontSize: 100 }} />
         {title}
       </Typography>
     </>

@@ -1,8 +1,8 @@
-import { red, green } from '@mui/material/colors';
+import { red, green, purple } from '@mui/material/colors';
 const palette = () =>{
   return  {
     primary: {
-      main: red[500],
+      main: purple[500],
     },
 
     secondary: {

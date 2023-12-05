@@ -31,23 +31,16 @@ function NotePad() {
     setGroceries(GroceriesUtil.getCasualShoppingList())
   }, []);
 
-
-  const addItem = () => {
-    const item = {
-      checked: false,
-      quantity: 1,
-      article: "Test Item 001"
-    }
-
+  const addItem = (item) => {
     setGroceries([...groceries, item])
     closeModal()
-  } 
+  }
 
   return (
     <>
       <Title title={title} />
       <AddButton onClick={openModal} />
-      <GroceriesList groceries={groceries}/>
+      <GroceriesList groceries={groceries} />
       <AddItemDialog open={open} handleClose={closeModal} handleSave={addItem} />
     </>
   );
