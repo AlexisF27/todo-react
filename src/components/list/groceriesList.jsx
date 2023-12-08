@@ -3,7 +3,7 @@ import TableHeader from '../headers/TableHeader'
 import TableContent from '../content/TableContent';
 import PropTypes from 'prop-types'
 
-function GroceriesList({ groceries }) {
+function GroceriesList({ groceries, setGroceries }) {
 
   return (
     <Box className='paper-spacing'>
@@ -11,7 +11,7 @@ function GroceriesList({ groceries }) {
         <TableContainer component={Paper}>
           <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
             <TableHeader />
-            <TableContent rows={groceries} />
+            <TableContent rows={groceries} setRows={setGroceries} />
           </Table>
         </TableContainer>
       </Paper>
@@ -21,6 +21,7 @@ function GroceriesList({ groceries }) {
 
 GroceriesList.propTypes = {
   groceries: PropTypes.array.isRequired,
+  setGroceries: PropTypes.func.isRequired,
 }
 
 export default GroceriesList

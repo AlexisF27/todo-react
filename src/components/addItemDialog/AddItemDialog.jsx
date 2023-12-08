@@ -10,16 +10,19 @@ import { Box, FormControl, FormGroup } from '@mui/material';
 import './addItemDialog.css'
 import TextField from '@mui/material/TextField';
 import { useState } from 'react'
+import { useEffect } from 'react';
 
 function AddItemDialog({ open, handleClose, handleSave }) {
-  const [item, setItem] = useState({
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const initialItemState = {
     checked: false,
     article: '',
     quantity: 1
-  })
+  };
+  const [item, setItem] = useState(initialItemState)
 
   const handleInput = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target
     setItem((prevItem) => {
       return {
         ...prevItem,

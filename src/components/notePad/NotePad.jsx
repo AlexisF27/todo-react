@@ -32,7 +32,9 @@ function NotePad() {
   }, []);
 
   const addItem = (item) => {
-    setGroceries([...groceries, item])
+    if (!groceries.some(grocery => grocery.article === item.article)) {
+      setGroceries([...groceries, item])
+    }
     closeModal()
   }
 
@@ -40,7 +42,7 @@ function NotePad() {
     <>
       <Title title={title} />
       <AddButton onClick={openModal} />
-      <GroceriesList groceries={groceries} />
+      <GroceriesList groceries={groceries} setGroceries={setGroceries} />
       <AddItemDialog open={open} handleClose={closeModal} handleSave={addItem} />
     </>
   );

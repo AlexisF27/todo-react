@@ -9,27 +9,56 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { red, green } from '@mui/material/colors';
 
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import { useState, useEffect } from 'react';
 
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
 
-function TableContent({ rows }) {
+function TableContent({ rows, setRows }) {
+
+  // const [groceries, setGroceries] = useState(rows);
+  const [groceries, setGroceries] = useState([]);
+
+  useEffect(() => {
+    // Set the state with the prop value when the component mounts
+    setGroceries(rows);
+  }, [rows]);
+
+
+  const eraseItem = (grocery) => {
+    const oldList = groceries.filter(grcy => grcy.article !== grocery.article);
+    updateGroceries(oldList);
+  }
+
+  const prevstate = (item) => {
+    return (prevGroceries) => prevGroceries.map((grocery) => grocery.article === item.article ? { ...grocery, checked: !item.checked } : grocery);
+  }
+
+  const changeCheckedItem = (item) => {
+    updateGroceries(prevstate(item));
+  }
+
+  const updateGroceries = (newGroceries) => {
+    setGroceries(newGroceries);
+    setRows(newGroceries);
+  }
+
   return (
     <TableBody>
-      {rows.map((row, index) => (
+      {groceries?.map((grocery, index) => (
         <TableRow
           key={index}
           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
         >
           <TableCell align="right">
-            <Checkbox  {...label} checked={row.checked} icon={<ShoppingBasketIcon sx={{ color: red[500] }} />} checkedIcon={<ShoppingBasketIcon sx={{ color: green[700] }} />} />
+            <Checkbox  {...label} onChange={() => { changeCheckedItem(grocery) }} checked={grocery.checked} icon={<ShoppingBasketIcon sx={{ color: red[500] }} />} checkedIcon={<ShoppingBasketIcon sx={{ color: green[700] }} />} />
           </TableCell>
-          <TableCell align="right">{row.quantity}</TableCell>
-          <TableCell align="right" component="th" scope="row"> {row.article}</TableCell>
+          <TableCell align="right">{grocery.quantity}</TableCell>
+          <TableCell align="right" component="th" scope="row"> {grocery.article}</TableCell>
           <TableCell align="right" component="th" scope="row">
-            <IconButton aria-label="delete" color="primary">
+            <IconButton onClick={() => eraseItem(grocery)} aria-label="delete" color="primary">
               <DeleteIcon />
             </IconButton>
           </TableCell>
@@ -38,10 +67,15 @@ function TableContent({ rows }) {
     </TableBody>
 
   )
+
+
+
+
 }
 
 TableContent.propTypes = {
-  rows: PropTypes.array.isRequired
+  rows: PropTypes.array.isRequired,
+  setRows: PropTypes.func.isRequired
 }
 
 export default TableContent
