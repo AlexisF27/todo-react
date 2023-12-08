@@ -1,8 +1,24 @@
-# React + Vite
+# Shopping List React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![image](https://github.com/AlexisF27/todo-react/assets/31175897/6348c4d9-6172-4e40-95f6-9688ba073abe)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Small project for a shopping list 
+TODOs
+- [x] Add styles with basic functionality
+- [x] List update
+- [ ] List sorting
+- [ ] Add redux
+
+### Run this project
+
+- Clone this project
+- Then run:
+  
+```shell
+$ npm install
+```
+
+```shell
+$ npm run dev
+```
